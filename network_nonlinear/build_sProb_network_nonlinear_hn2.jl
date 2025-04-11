@@ -279,7 +279,7 @@ function build_sProb_network_nonlinear_hn2( w, rw, N, aij, x0 , Mrand, Drand , i
 
     for i = 1:NsubSys
         Qcpy = spzeros(nz[i] - (N+1)*(nxr+nur), nz[i] - (N+1)*(nxr+nur))
-        H = blockdiag( kron(M_n,Qr), Pr, kron(M_N,Rr), Qcpy  ) + 0.0001*spzeros(nz[i],nz[i]);
+        H = blockdiag( kron(M_n,Qr), Pr, kron(M_N,Rr), Qcpy  ) + 0.0001*speye(nz[i]);
         HH[i] = H;
         g = spzeros(nz[i]);
         gg[i] = g;
